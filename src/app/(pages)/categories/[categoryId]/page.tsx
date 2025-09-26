@@ -66,6 +66,8 @@ export default function CategoryDetails() {
     }
   }
 
+  function handleRemoveFromWishlist() {}
+
   useEffect(() => {
     fetchSpesificCategory(String(categoryId));
     fetchCategoryProducts(String(categoryId));
@@ -179,6 +181,7 @@ export default function CategoryDetails() {
                         key={product._id}
                         viewMode={viewMode}
                         product={product}
+                        handleRemoveFromWishlist={handleRemoveFromWishlist}
                       />
                     );
                   })

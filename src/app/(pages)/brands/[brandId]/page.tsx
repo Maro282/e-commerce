@@ -29,6 +29,8 @@ export default function BrandDetails() {
     setProducts(response.data);
   }
 
+  function handleRemoveFromWishlist() {}
+
   useEffect(() => {
     fetchSpesificBrand(String(brandId));
     fetchBrandProducts(String(brandId));
@@ -76,6 +78,7 @@ export default function BrandDetails() {
                       key={product._id}
                       viewMode={viewMode}
                       product={product}
+                      handleRemoveFromWishlist={handleRemoveFromWishlist}
                     />
                   );
                 })}

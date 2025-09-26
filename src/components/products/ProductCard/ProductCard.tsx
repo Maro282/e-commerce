@@ -11,7 +11,7 @@ interface ProductProps {
   product: Product;
   viewMode?: string;
   from?: string;
-  wishlisted: boolean;
+  wishlisted?: boolean;
   handleRemoveFromWishlist: (value: string) => void;
 }
 
@@ -48,14 +48,16 @@ export default function ProductCard({
             <X
               className=" absolute top-2 right-2 z-10 text-red-500 hover:text-red-800 hover:cursor-pointer hover:shadow-lg "
               onClick={() => {
-                handleRemoveFromWishlist(product._id);
+                handleRemoveFromWishlist?.(product._id);
               }}
             />
           ) : (
             <ProductCardBtns
               productId={product._id}
               handleAddToWishlist={handleAddToWishlist}
+              handleRemoveFromWishlist={handleRemoveFromWishlist}
               viewMode={viewMode}
+              wishlisted={wishlisted}
             />
           )}
 
@@ -139,7 +141,7 @@ export default function ProductCard({
         <div>
           {/* Popular Badge */}
 
-          {product?.sold > 7000 ? (
+          {product?.sold ?? 0 > 7000 ? (
             <span className="absolute top-3 left-2 bg-primary text-white text-xs px-3 py-1 rounded-full z-10">
               Popular
             </span>
@@ -152,7 +154,7 @@ export default function ProductCard({
             <X
               className=" absolute top-2 right-2 z-10 text-red-500 hover:text-red-800 hover:cursor-pointer hover:shadow-xl "
               onClick={() => {
-                handleRemoveFromWishlist(product._id);
+                handleRemoveFromWishlist?.(product._id);
               }}
             />
           ) : (

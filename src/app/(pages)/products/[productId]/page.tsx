@@ -11,7 +11,14 @@ import {
   getProductsWithCategory,
 } from "@/services";
 import { SingleProductResponse } from "@/types/responses";
-import { Grid3x2, Heart, Loader, Star, StarHalf, TextAlignJustify } from "lucide-react";
+import {
+  Grid3x2,
+  Heart,
+  Loader,
+  Star,
+  StarHalf,
+  TextAlignJustify,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -68,6 +75,8 @@ export default function ProductDetails() {
     }
     setIsLoadingAddToWishlist(false);
   }
+
+  function handleRemoveFromWishlist() {}
 
   useEffect(() => {
     if (productData == null) {
@@ -305,6 +314,7 @@ export default function ProductDetails() {
                           viewMode={viewMode}
                           product={product}
                           key={product._id}
+                          handleRemoveFromWishlist={handleRemoveFromWishlist}
                         />
                       );
                     })
@@ -314,6 +324,7 @@ export default function ProductDetails() {
                           viewMode={viewMode}
                           product={product}
                           key={product._id}
+                          handleRemoveFromWishlist={handleRemoveFromWishlist}
                         />
                       );
                     })}
