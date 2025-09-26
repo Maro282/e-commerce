@@ -35,7 +35,7 @@ export default function Address() {
   // Function to delete
   async function handleRemoveAddress(addressId: string) {
     setIsLoading(true);
-    const response = await removeAddress(addressId, data?.token);
+    const response = await removeAddress(addressId, data?.token ?? "");
     if (response.status == "success") {
       toast.success(
         response.message ? response.message : "Deleted successfully!"
