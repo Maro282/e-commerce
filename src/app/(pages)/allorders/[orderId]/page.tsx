@@ -18,7 +18,7 @@ export default function OrderDetails() {
     const response = await getUserOrders(userId);
     if (response.length != 0) {
       const requiredOrder = response.find((order) => order._id == orderId);
-      setMyOrder(requiredOrder);
+      setMyOrder(requiredOrder!);
       console.log("user id ", userId);
     }
   }
