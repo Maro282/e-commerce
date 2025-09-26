@@ -59,6 +59,8 @@ export default function Products() {
     setMatchedProducts(matchedProducts);
   }
 
+  function handleRemoveFromWishlist() {}
+
   useEffect(() => {
     fetchProducts();
   }, []);
@@ -194,6 +196,7 @@ export default function Products() {
               key={product._id}
               viewMode={viewMode}
               product={product}
+              handleRemoveFromWishlist={handleRemoveFromWishlist}
             />
           );
         })}
