@@ -18,6 +18,7 @@ export default function MostSoldProducts({
 }: {
   mostSoldProducts: ProductResponse;
 }) {
+  function handleRemoveFromWishlist() {}
   return (
     <>
       <div className=" py-8 w-[90%] mx-auto">
@@ -53,7 +54,10 @@ export default function MostSoldProducts({
           {mostSoldProducts.data.map((product) => {
             return (
               <SwiperSlide key={product._id} className="py-5">
-                <ProductCard product={product} />
+                <ProductCard
+                  product={product}
+                  handleRemoveFromWishlist={handleRemoveFromWishlist}
+                />
               </SwiperSlide>
             );
           })}

@@ -66,7 +66,7 @@ export default function AddAddressComponent({
       phone,
       city,
     };
-    const response = await addNewAddress(x.data?.token, values);
+    const response = await addNewAddress(x.data?.token ?? "", values);
     if (response.status == "success") {
       toast.success(response.message ? response.message : "Added successfully");
       cancelProcess();

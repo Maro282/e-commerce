@@ -82,7 +82,7 @@ export default function ResetPassword() {
       {
         method: "put",
         headers: {
-          token: x.data?.token,
+          token: x.data?.token ??"",
           "content-type": "application/json",
         },
         body: JSON.stringify(values),
