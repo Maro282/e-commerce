@@ -64,56 +64,6 @@ export const nextAuthOptions: AuthOptions = {
   },
 };
 
-// providers: [
-//   CredentialsProvider({
-//     name: "credentials",
-
-//     credentials: {
-//       email: { type: "text" },
-//       password: { type: "password" },
-//     },
-
-//     async authorize(credentials) {
-//       const response = await fetch(
-//         "https://ecommerce.routemisr.com/api/v1/auth/signin",
-//         {
-//           method: "post",
-//           headers: {
-//             "content-type": "application/json",
-//           },
-//           body: JSON.stringify(credentials),
-//         }
-//       );
-//       const data = await response.json();
-
-//       if (response.ok) {
-//         return data;
-//       }
-
-//       return null;
-//     },
-//   }),
-// ],
-
-// session: {
-//   strategy: "jwt",
-// },
-
-// secret: process.env.AUTH_SECRET,
-
-// pages: {
-//   signIn: "/login",
-// },
-
-// callbacks: {
-//   async session({ session, user, token }) {
-//     return { ...session, ...user, ...token };
-//   },
-//   async jwt({ token, user }) {
-//     return { ...user, ...token };
-//   },
-// },
-
 const handler = NextAuth(nextAuthOptions);
 
 export { handler as GET, handler as POST };
