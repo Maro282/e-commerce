@@ -33,12 +33,19 @@ export default function MainSlider() {
         </SwiperSlide>
       </Swiper> */}
 
-      <div className="w-[90%] mx-auto text-center grid gap-8  py-10 px-5  lg:py-20 lg:px-10 bg-gray-50 rounded-lg  my-12   ">
+      <div className="w-[95%] sm:w-[90%] mx-auto text-center grid gap-6 sm:gap-8 py-8 sm:py-10 lg:py-20 px-4 sm:px-6 lg:px-10 bg-gray-50 rounded-lg my-8 sm:my-12">
+        {/* Headline */}
         <div className="flex flex-col lg:flex-row gap-2 justify-center items-center">
-          <h1 className="lg:text-5xl md:text-3xl text-2xl">Shop the Latest.</h1>
-          <h1 className="lg:text-5xl md:text-3xl text-2xl"> Live the Best.</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-snug">
+            Shop the Latest.
+          </h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-snug">
+            Live the Best.
+          </h1>
         </div>
-        <p className="text-gray-700 md:text-lg lg:text-xl px-6 ">
+
+        {/* Description */}
+        <p className="text-gray-700 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed px-2 sm:px-6">
           At{" "}
           <span className="bg-black text-white px-1 font-bold rounded me-1">
             M
@@ -49,12 +56,13 @@ export default function MainSlider() {
           fits your lifestyle.
         </p>
 
-        <div className="browse btn flex gap-5 items-center justify-center ">
-          <Button className="lg:px-5 lg:py-6">
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center justify-center">
+          <Button className="w-full sm:w-auto px-4 sm:px-6 py-3 sm:py-4 lg:px-5 lg:py-6">
             <Link href={"/products"}>Discover Products</Link>
           </Button>
-          <Button className="lg:px-5 lg:py-6">
-            <Link href={"/categories"}> Search by category</Link>
+          <Button className="w-full sm:w-auto px-4 sm:px-6 py-3 sm:py-4 lg:px-5 lg:py-6">
+            <Link href={"/categories"}>Search by Category</Link>
           </Button>
         </div>
       </div>
