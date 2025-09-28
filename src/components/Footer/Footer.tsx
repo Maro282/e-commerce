@@ -9,7 +9,6 @@ import {
   Twitter,
 } from "lucide-react";
 import qr from "@/../public/images/qr.jpg";
-import appStore from "@/../public/images/appStore.png";
 import googlePlay from "@/../public/images/googlePlay.png";
 import Image from "next/image";
 import { Button } from "../ui/button";
@@ -48,32 +47,10 @@ export default function Footer() {
     },
   ];
 
-  const socialLinks = [
-    {
-      title: "Facebook",
-      href: "#",
-    },
-
-    {
-      title: "Twitter",
-      href: "#",
-    },
-
-    {
-      title: "Instagram",
-      href: "#",
-    },
-
-    {
-      title: "Linkedin",
-      href: "#",
-    },
-  ];
-
   return (
     <>
       <main className="flex justify-center bg-black p-5 lg:p-10 xl:p-20">
-        <div className=" grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 gap-y-4">
+        <div className=" grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 gap-y-9">
           {/* First section */}
           <div className="flex flex-col gap-2 ">
             <h2 className="text-white font-semibold text-xl  mb-1">
@@ -92,6 +69,7 @@ export default function Footer() {
               <SendHorizontal className="text-white cursor-pointer" />
             </div>
           </div>
+
           {/* Footer middle sections */}
           {footerSections.map((section, index) => {
             return (
@@ -118,7 +96,7 @@ export default function Footer() {
           })}
 
           {/* Footer last section */}
-          <div className=" flex flex-col gap-2">
+          <div className=" flex flex-col gap-2 ">
             <h2 className="text-white font-semibold text-xl  mb-1">
               Download App
             </h2>
@@ -127,7 +105,7 @@ export default function Footer() {
               <p className="text-white text-sm mb-2">
                 Save $3 with App New User Only
               </p>
-              <div className="grid grid-cols-2 gap-5 items-center ">
+              <div className="flex  gap-5 items-center ">
                 <div className="relative w-30 h-30">
                   <Image
                     src={qr}
@@ -137,7 +115,7 @@ export default function Footer() {
                   />
                 </div>
                 <div className="grid gap-2">
-                  <div className="relative w-full h-10 ">
+                  <div className="relative w-15 h-15">
                     <Image
                       src={googlePlay}
                       alt=" Site google play"
@@ -145,7 +123,7 @@ export default function Footer() {
                       className="absolute object-cover "
                     />
                   </div>
-                  <div className="relative w-full h-10 p-2">
+                  <div className="relative w-15 h-15 ">
                     <Image
                       src={googlePlay}
                       alt=" Site google play"
